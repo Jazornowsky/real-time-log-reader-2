@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.2678062678062678, 0.7037037037037037" focusTraversable="true" minWidth="300.0" orientation="VERTICAL" xmlns:fx="http://javafx.com/fxml" fx:controller="net.damian.wojdat.talktalk_client.TalkTalkMainWindowController">
+  <items>
+    <AnchorPane>
+      <children>
+        <TreeView fx:id="userListMain" editable="true" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      </children>
+    </AnchorPane>
+    <AnchorPane minHeight="300.0" prefHeight="300.0">
+      <children>
+        <TextArea fx:id="messagesArea" editable="false" focusTraversable="false" minHeight="350.0" prefHeight="300.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      </children>
+    </AnchorPane>
+    <AnchorPane minHeight="120.0" prefHeight="120.0">
+      <children>
+        <GridPane id="GridPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <children>
+            <ToolBar GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <items>
+                <Button fx:id="disconnectButton" mnemonicParsing="false" onAction="#handleDisconnectButtonAction" prefWidth="97.0" text="Disconnect" />
+                <Button id="connecButton" fx:id="connectButton" mnemonicParsing="false" onAction="#handleConnectButtonAction" prefWidth="97.0" text="Connect" />
+                <Button fx:id="submitmessage" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Send" />
+              </items>
+            </ToolBar>
+            <TextArea fx:id="sendTextArea" onKeyPressed="#onEnterHit" wrapText="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="34.0" minHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="100.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
+  </items>
+</SplitPane>
